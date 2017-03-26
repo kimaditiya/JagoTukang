@@ -1,0 +1,4 @@
+composer.phar
+/web/assets
+/tests
+/runtime
