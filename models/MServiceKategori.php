@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use app\models\MService;
 
 /**
  * This is the model class for table "m_service_kategori".
@@ -35,6 +36,14 @@ class MServiceKategori extends \yii\db\ActiveRecord
             [['serviceKategoriGambarUrl'], 'string', 'max' => 200],
             [['serviceKategoriStatus'], 'string', 'max' => 1],
         ];
+    }
+
+      public function getServiceTbl(){
+        return $this->hasOne(MService::className(), ['serviceId' => 'serviceId']);
+    }
+
+     public function getServiceNama(){
+         return $this->serviceTbl != '' ? $this->serviceTbl->serviceJudul : 'none';
     }
 
     /**

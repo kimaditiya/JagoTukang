@@ -37,6 +37,7 @@ class MServiceController extends Controller
     {
         $searchModel = new MServiceSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->pagination->pageSize=10;
 
         return $this->render('index', [
             'searchModel' => $searchModel,

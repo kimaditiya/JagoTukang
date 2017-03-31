@@ -10,7 +10,9 @@ use yii\widgets\ActiveForm;
 
 <div class="mservice-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+        'id'=>$model->formName()
+    ]); ?>
 
     <?= $form->field($model, 'serviceJudul')->textInput(['maxlength' => true]) ?>
 
