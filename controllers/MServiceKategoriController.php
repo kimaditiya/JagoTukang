@@ -8,6 +8,8 @@ use app\models\MServiceKategoriSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
+use app\models\MService;
 
 /**
  * MServiceKategoriController implements the CRUD actions for MServiceKategori model.
@@ -37,6 +39,7 @@ class MServiceKategoriController extends Controller
     {
         $searchModel = new MServiceKategoriSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->pagination->pageSize=10;
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -56,6 +59,12 @@ class MServiceKategoriController extends Controller
         ]);
     }
 
+
+   
+    public function ary_service(){
+        return ArrayHelper::map(MService::find()->all(),'serviceId','serviceJudul');
+    }
+
     /**
      * Creates a new MServiceKategori model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -70,6 +79,7 @@ class MServiceKategoriController extends Controller
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'data_service' => self::ary_service()
             ]);
         }
     }

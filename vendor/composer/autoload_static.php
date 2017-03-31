@@ -25,6 +25,10 @@ class ComposerStaticInit94d15878bc24100850c6281a1e85878c
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
+        'r' => 
+        array (
+            'rmrevin\\yii\\fontawesome\\' => 24,
+        ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
@@ -32,10 +36,16 @@ class ComposerStaticInit94d15878bc24100850c6281a1e85878c
         'k' => 
         array (
             'kartik\\select2\\' => 15,
+            'kartik\\plugins\\depdrop\\' => 23,
             'kartik\\mpdf\\' => 12,
             'kartik\\grid\\' => 12,
             'kartik\\dialog\\' => 14,
+            'kartik\\depdrop\\' => 15,
             'kartik\\base\\' => 12,
+        ),
+        'd' => 
+        array (
+            'dmstr\\' => 6,
         ),
         'c' => 
         array (
@@ -112,6 +122,10 @@ class ComposerStaticInit94d15878bc24100850c6281a1e85878c
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
         ),
+        'rmrevin\\yii\\fontawesome\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rmrevin/yii2-fontawesome',
+        ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
@@ -121,6 +135,10 @@ class ComposerStaticInit94d15878bc24100850c6281a1e85878c
         'kartik\\select2\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2',
+        ),
+        'kartik\\plugins\\depdrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/dependent-dropdown',
         ),
         'kartik\\mpdf\\' => 
         array (
@@ -134,9 +152,17 @@ class ComposerStaticInit94d15878bc24100850c6281a1e85878c
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-dialog',
         ),
+        'kartik\\depdrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-depdrop',
+        ),
         'kartik\\base\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base',
+        ),
+        'dmstr\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
         ),
         'cebe\\markdown\\' => 
         array (
@@ -221,6 +247,13 @@ class ComposerStaticInit94d15878bc24100850c6281a1e85878c
     );
 
     public static $prefixesPsr0 = array (
+        'c' => 
+        array (
+            'cebe\\gravatar\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/cebe/yii2-gravatar',
+            ),
+        ),
         'P' => 
         array (
             'Prophecy\\' => 

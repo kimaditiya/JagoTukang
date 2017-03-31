@@ -40,6 +40,25 @@ class MServiceDetail extends \yii\db\ActiveRecord
         ];
     }
 
+    
+
+     public function getKategoriTbl(){
+        return $this->hasOne(MServiceKategori::className(), ['serviceKategoriId' => 'serviceKategoriId']);
+    }
+
+    public function getServiceTbl(){
+            return $this->hasOne(MService::className(), ['serviceId' => 'serviceId'])
+            ->via('kategoriTbl');
+        }
+
+    public function getServicejudulheader(){
+              return $this->serviceTbl != '' ? $this->serviceTbl->serviceJudul : 'none';
+    }
+     public function getServiceJudul(){
+         return $this->kategoriTbl != '' ? $this->kategoriTbl->serviceKategoriJudul : 'none';
+    }
+    
+
     /**
      * @inheritdoc
      */
