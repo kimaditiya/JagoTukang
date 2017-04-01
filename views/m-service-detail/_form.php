@@ -1,10 +1,10 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
 use kartik\select2\Select2;
 use kartik\depdrop\DepDrop;
 use yii\helpers\Url;
+use yii\bootstrap\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\MServiceDetail */
@@ -14,7 +14,8 @@ use yii\helpers\Url;
 <div class="mservice-detail-form">
 
     <?php $form = ActiveForm::begin([
-        'id'=>$model->formName()
+        'id'=>$model->formName(),
+        'layout' => 'horizontal'
     ]); ?>
 
     <?= $form->field($model, 'serviceDetailJudul')->textInput(['maxlength' => true]) ?>
@@ -44,10 +45,26 @@ use yii\helpers\Url;
     ])->label('Kategori Service') ?>
 
 
+
+     <?php
+    if(!$model->isNewRecord){
+
+    ?>
+
+        <?= $form->field($model, 'serviceDetailStatus')->widget(Select2::classname(), [
+        'data' => $data_status,
+        'options' => ['placeholder' => 'Select a ...'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]) ?>
+
+    <?php
+        }
+    ?>
+
+
     
-
-    <?= $form->field($model, 'serviceDetailStatus')->textInput(['maxlength' => true]) ?>
-
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
