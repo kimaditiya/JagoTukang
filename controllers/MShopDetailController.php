@@ -8,6 +8,8 @@ use app\models\MShopDetailSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
+use app\models\MShop;
 
 /**
  * MShopDetailController implements the CRUD actions for MShopDetail model.
@@ -56,6 +58,20 @@ class MShopDetailController extends Controller
         ]);
     }
 
+
+     public function ary_shop(){
+        return ArrayHelper::map(MShop::find()->all(),'shopId','shopJudul');
+    }
+
+
+     public function ary_status(){
+        $ary_status =[['id'=>'1', 'status'=> 'Active'],
+            ['id'=>'0', 'status'=> 'InActive']
+        ];
+
+        return ArrayHelper::map($ary_status,'id','status');
+    }
+
     /**
      * Creates a new MShopDetail model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -70,6 +86,7 @@ class MShopDetailController extends Controller
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'data_shop'=>self::ary_shop()
             ]);
         }
     }
@@ -89,6 +106,7 @@ class MShopDetailController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'data_status'=>self::ary_status()
             ]);
         }
     }

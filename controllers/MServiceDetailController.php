@@ -68,6 +68,15 @@ class MServiceDetailController extends Controller
     }
 
 
+     public function ary_status(){
+        $ary_status =[['id'=>'1', 'status'=> 'Active'],
+            ['id'=>'0', 'status'=> 'InActive']
+        ];
+
+        return ArrayHelper::map($ary_status,'id','status');
+    }
+
+
      /**
      * Depdrop list kategori
      * @author aditiya
@@ -135,6 +144,8 @@ class MServiceDetailController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'data_service'=>self::ary_service(),
+                'data_status'=>self::ary_status()
             ]);
         }
     }

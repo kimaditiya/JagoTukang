@@ -65,6 +65,15 @@ class MServiceKategoriController extends Controller
         return ArrayHelper::map(MService::find()->all(),'serviceId','serviceJudul');
     }
 
+
+    public function ary_status(){
+        $ary_status =[['id'=>'1', 'status'=> 'Active'],
+            ['id'=>'0', 'status'=> 'InActive']
+        ];
+
+        return ArrayHelper::map($ary_status,'id','status');
+    }
+
     /**
      * Creates a new MServiceKategori model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -99,6 +108,8 @@ class MServiceKategoriController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'data_service' => self::ary_service(),
+                'data_status'=>self::ary_status()
             ]);
         }
     }

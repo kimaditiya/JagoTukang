@@ -30,7 +30,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'shopId',
             'shopJudul',
-            'shopStatus',
+            [
+                'label'=>'Status',
+                'format'=>'raw',
+                'value'=> $model->shopStatus ? '<span class="glyphicon glyphicon-ok"></span':'<span class="glyphicon glyphicon-remove"></span'
+            ],
+           
         ],
     ]) ?>
 

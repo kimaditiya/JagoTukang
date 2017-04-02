@@ -47,6 +47,7 @@ class MShopDetailSearch extends MShopDetail
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort'=>false
         ]);
 
         $this->load($params);

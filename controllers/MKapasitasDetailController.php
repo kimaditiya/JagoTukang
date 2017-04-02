@@ -37,6 +37,7 @@ class MKapasitasDetailController extends Controller
     {
         $searchModel = new MKapasitasDetailSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->pagination->pageSize=10;
 
         return $this->render('index', [
             'searchModel' => $searchModel,

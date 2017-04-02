@@ -30,7 +30,7 @@ class MKapasitasDetail extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['kapasitasJudul', 'kapasitasHarga', 'kapasitasStatus', 'serviceDetailId'], 'required'],
+            [['kapasitasJudul', 'kapasitasHarga', 'serviceDetailId'], 'required'],
             [['kapasitasHarga', 'serviceDetailId'], 'integer'],
             [['kapasitasDeskripsi'], 'string'],
             [['kapasitasJudul'], 'string', 'max' => 100],
@@ -51,6 +51,14 @@ class MKapasitasDetail extends \yii\db\ActiveRecord
             'serviceDetailId' => 'Service Detail ID',
             'kapasitasDeskripsi' => 'Kapasitas Deskripsi',
         ];
+    }
+
+    public function getServiceDetailTbl(){
+            return $this->hasOne(MServiceDetail::className(), ['serviceDetailId' => 'serviceDetailId']);
+        }
+
+    public function getServicejuduldetail(){
+              return $this->serviceDetailTbl != '' ? $this->serviceDetailTbl->serviceDetailJudul : 'none';
     }
 
     /**

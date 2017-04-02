@@ -15,15 +15,9 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'shopDetailId') ?>
 
     <?= $form->field($model, 'shopDetailJudul') ?>
 
-    <?= $form->field($model, 'shopDetailDeskripsi') ?>
-
-    <?= $form->field($model, 'shopDetailGambar') ?>
-
-    <?= $form->field($model, 'shopId') ?>
 
     <?php // echo $form->field($model, 'shopDetailStatus') ?>
 

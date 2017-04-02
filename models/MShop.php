@@ -27,7 +27,8 @@ class MShop extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['shopJudul', 'shopStatus'], 'required'],
+            [['shopJudul'], 'required'],
+            [['shopStatus'],'default','value'=>'1'],
             [['shopJudul'], 'string', 'max' => 100],
             [['shopStatus'], 'string', 'max' => 1],
         ];

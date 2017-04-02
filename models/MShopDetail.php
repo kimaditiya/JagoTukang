@@ -30,7 +30,8 @@ class MShopDetail extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['shopDetailId', 'shopDetailJudul', 'shopDetailStatus'], 'required'],
+            [['shopDetailJudul'], 'required'],
+            [['shopDetailStatus'],'default','value'=>'1'],
             [['shopDetailId', 'shopId'], 'integer'],
             [['shopDetailJudul'], 'string', 'max' => 100],
             [['shopDetailDeskripsi', 'shopDetailGambar'], 'string', 'max' => 200],

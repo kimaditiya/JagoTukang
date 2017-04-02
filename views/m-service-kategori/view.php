@@ -9,6 +9,12 @@ use yii\widgets\DetailView;
 $this->title = $model->serviceKategoriId;
 $this->params['breadcrumbs'][] = ['label' => 'Mservice Kategoris', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+if($model->serviceKategoriStatus){
+    $status = '<span class="glyphicon glyphicon-ok"></span';
+}else{
+    $status = '<span class="glyphicon glyphicon-reamove"></span';
+}
 ?>
 <div class="mservice-kategori-view">
 
@@ -31,8 +37,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'serviceKategoriId',
             'serviceKategoriJudul',
             'serviceKategoriGambarUrl:url',
-            'serviceKategoriStatus',
-            'serviceId',
+            // 'serviceKategoriStatus',
+            [
+                'label'=>'Status',
+                'format'=>'raw',
+                'value'=>$status
+            ],
+            'serviceNama',
         ],
     ]) ?>
 
